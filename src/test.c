@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <pcap/pcap.h>
 #include "rtap.h"
+#include "dot11.h"
 #include "common.h"
 
 
@@ -65,6 +66,7 @@ void testing_dot11_parsing(char * pcap_file)
         if (pkt_type == 127)
             rt = read_rtap(&contents);
             printf("Next byte: %x\n", *contents);
+            //read_dot11(&contents);
         printf("count %d\n\n",count);
     }
     printf("count = %d\n", count);
@@ -74,9 +76,12 @@ void testing_dot11_parsing(char * pcap_file)
 
 int main(){
 
-    char * pcap_file = "../pcaps/pcap_jungle";
+    char * pcap_file = "../pcaps/reza_pcaps/1.pcap";
+    //char * pcap_file = "../pcaps/pcap_jungle";
     testing_rtap_parsing(pcap_file);
-    testing_dot11_parsing(pcap_file);
+    //testing_dot11_parsing(pcap_file);
+    u_int64_t numb = 60260352085;
+    printf("%lld\n", numb);
 
     return 0;
 }

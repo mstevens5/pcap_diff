@@ -1,0 +1,4 @@
+TODO: Handle Radiotap bits 16 and 18 depending on OS...
+      Currently things could break, which would mean any 
+      value corresponding to bits after 18 could be interpreted
+      incorrectly.
